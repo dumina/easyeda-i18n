@@ -8,6 +8,9 @@
 # ui_data_zh-hant.txt
 繁體中文 (Chinese - Traditional) = 繁体中文 (Chinese - Traditional)
 
+# ui_data_hr.txt
+Hrvatski (Croatian) = Hrvatski (Croatian)
+
 # ui_data_cs.txt
 Čeština (Czech) = Čeština (Czech)
 
@@ -61,7 +64,6 @@ Tiếng Việt (Vietnamese) = Tiếng Việt (Vietnamese)
 
 # ui_data_hu.txt
 Magyar (Hungarian) = Magyar (Hungarian)
-
 
 
 
