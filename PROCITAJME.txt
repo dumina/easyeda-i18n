@@ -1,0 +1,132 @@
+# easyeda-i18n
+
+EasyEDA [https://easyeda.com/editor](https://easyeda.com/editor)
+
+EasyEDA je slobodan, lagan za uporabu, snažan mrežni alat za izradu PCB dizajna. Pomaže ljudima da ožive svoje kreacije.
+
+Ako koristite EasyEDA i zainteresirani ste da ga učinite pristupačnijim osobama u vašoj zemlji, pomozite nam stvoriti datoteke za prevođenje koje EasyEDA koristi za pretvaranje korisničkog sučelja u različite jezike.
+
+Ovaj se projekt sastoji od datoteka regionalne sheme jezika EasyEDA Editor. Dakle, što više jezika možemo dodati na ovaj popis, to će EasyEDA biti pristupačnija ljudima diljem svijeta.
+
+![图片](https://user-images.githubusercontent.com/29702100/130799335-daf481c8-314b-4fd2-89ea-023261a14248.png)
+
+
+## Mapa
+
+`editor-std`: EasyEDA editor standardno izdanje
+
+## Prijevodi
+
+Ako želite pomoći u prevođenju:
+
+* Please fork this project
+
+* Work from your fork, then edit your language file such as `ui_data_uk.txt` (for Ukrainian etc.)
+
+### Ako ne možete pronaći jezičnu datoteku
+
+* Kopirajte **`ui_data_CLEAN.txt`**,
+
+* Promjenite naziv .txt datoteke pomoću ovog oblika imenovanja: `ui_data_xx.txt` gdje biste zamijenili xx svojim jezičnim kodom. Dakle, za primjer, ako želite prevesti u Hrvatski, trebate promijeniti datoteku u `ui_data_hr.txt`.   
+  možete se pozvati na ovu poveznicu za odabir kodova: https://www.w3schools.com/tags/ref_language_codes.asp
+
+* Prevodite Engleski (s lijeve strane od `=`) u svoj jezik, smještajući vaš prijevod s desne strane u odnosu na `=`. Slova s lijeve strane od `=` znak **must not be changed**.
+
+Za primjer, ako prevodite datoteku u Ruski, jednostavno trebate staviti vaš prijevod na desnoj strani od `=`. Primjer:
+```js
+// izvorni ui_data_CLEAN.txt
+Select = 
+
+// vaš prijevod ui_data_ru.txt
+Select = Выбрать
+```   
+
+Ako tekst ima zagrade ili vitičaste zagrade, oni moraju ostati u dokumentu.
+```js
+Join... = Collegati...
+
+Add font success: {name} = 字体添加成功: {name}
+```  
+Riječ unutar zagrade ima značenje za program i ne smije se prevoditi, ali bi trebala biti uključena u vaš prevedeni tekst s desne strane..
+
+Ako redak započinje znakom # (taraba) , može biti zanemaren, # znak označava komentar u dokumentu i nema utjecaj na program.
+```js
+#spice            //ovu komentirajuću liniju, ne morate prevoditi
+Switch mode = 切换模式
+```
+
+Prilikom prevođenja točkaste notacije sloja nije potrebno stavljati točku u prijevod. Samo prevedite riječi. Međutim, nemojte uklanjati točke s lijeve strane od `=`
+```
+ALL.layer = 全部层
+Copper.layer = 铜箔层
+Non-Copper.layer = 非铜箔层
+Other.layer = 其他层
+```
+
+
+Stavke okružene zagradama jednostavno označavaju sekcije i mogu se zanemariti. Nemojte mijenjati te crte razgraničenja, ali riječi unutar odjeljaka treba prevesti ako postoji `=` simbol pokraj riječi.
+```js
+[menu_project]    //keep this structure
+View=查看
+[/menu_project]   //keep this structure
+```
+
+Ako odlučite prevesti na jezik koji trenutno nemamo, ažurirajte `language_list.txt` datoteku, i slijedite njen oblik i umetnite jezik koji prevodite u tu datoteku. Datoteka će se koristiti za dodavanje mogućnosti jezičnog izbornika u EasyEDA.
+
+```js
+# local language (English name) = local language (English name)
+
+# ui_data_zh-hans.txt
+简体中文 (Chinese - Simplified) = 简体中文 (Chinese - Simplified)
+# ui_data_zh-hant.txt
+正體中文 (Chinese - Traditional) = 繁体中文 (Chinese - Traditional)
+# ui_data_cs.txt
+Čeština (Czech) = Čeština (Czech)
+# English
+English (English) = English (English)
+# ui_data_fr.txt
+Français (French) = Française (French)
+# ui_data_de.txt
+Deutsch (German) = Deutsch (German)
+
+```
+Popis jezika možete pronaći na https://github.com/EasyEDA2021/easyeda-i18n/blob/main/editor-std/language_list.txt
+
+
+Postupak za to je da, najprije pošaljete (Fork) projekt na Git preko vašeg računa. Potom, preslikate sadržaj na vaše računalo - koje možete učiniti s git softverskom sučelju ili bilo kojem besplatnom git sučelju.
+
+Nakon što ste preslikali projekt, napravite novu granu i dajte joj ime po vlastitom izboru. Obično kada napravite granu, dobivate mogućnost provjere te grane, što trebate učiniti. Zatim uredite bitne datoteke ili kopirate osnovnu datoteku i preimenujete ju itd., provjerite jeste li te datoteke uključili u lokalnu strukturu git projekta.
+
+Kada ste gotovi, morate IZVRŠITI promjene koje ste napravili u repozitoriju, koji samo AŽURIRA vašu lokalnu kopiju projekta.  Potom, GURATE svoj lokalni repozitorij natrag na svoj git račun, a zatim se prijavite na svoj git račun iz web preglednika, i idite u taj repozitorij koji ste upravo gurnuli, i vidjet ćete opciju **create a pull request** (stvorite zahtjev za povlačenjem).
+
+#### Stvaranje zahtjeva za povlačenjem
+
+Dodajte komentar na zahtjev za povlačenje, a mi ćemo zatim pogledati vaš prijevod i potvrditi da će raditi sa softverom i također ga provjeriti za točnost itd. zatim ćemo ga spojiti s glavnim projektom na našem sljedećem planiranom održavanju.
+
+## Bilješka
+
+1) Datoteka `ui_data_CLEAN.txt` je korijenska datoteka koja je uobičajen predložak korišten u svim novim jezičnim prijevodima. Molimo da ne uređujete ovu datoteku, ali napravite presliku iste, preimenujte ju da ima vaš jezični kod u imenu, potom uredite presliku.
+2) Važno je urediti datoteku koju ste preslikali, ispravno, provjerite jeste li slijedili gore navedena pravila. Softver traži naziv datoteke koji je povezan s određenim jezikom i ako ne može pronaći engleske riječi koje se nalaze na lijevoj strani od `=` zadano će prikazati engleski umjesto prevedenog teksta. Zato je važno razumjeti gore navedene smjernice.
+3) Ne trebamo nikakve engleske prijevode kao što su "ui_data_en.txt", jer već imamo engleski jezik koji je tvrdo kodiran u softver i to je temelj iz kojeg softver generira sve jezične prijevode iz datoteka koje nam pomažete stvoriti u ovom projektu.
+
+
+## Suradnik
+
+**Posebno hvala svima koji su pomogli prevesti i za njihov naporan rad i predanost našoj zajednici. Pomogli ste da EasyEDA bude pristupačnija širom svijeta. HVALA**
+
+https://github.com/EasyEDA2021/easyeda-i18n/graphs/contributors
+
+Prethodni suradnici:
+
+- Andrew and Adambyw: Help translated EasyEDA from English to Polish. http://and.elektroda.eu/
+- A.Noda: Help translated EasyEDA from English to Japanese language. http://signalkhobho.com/
+- JM TERRADE:  Help translated EasyEDA from English to French language. http://terrade.com/
+- José Miguel: Help translated EasyEDA from English to Spanish language.
+- Kent Ahlberg: Help translated EasyEDA from English to Swedish language.
+- Marcel Kuesters: Help translated EasyEDA from English to German language.
+- Гололобов Владимир Николаевич: Help translated EasyEDA Tutorial from English to Russian language http://vgololobov.narod.ru/
+- Victor Bychek and Травников Александр: Help translated EasyEDA from English to Russian language http://bychek.ru
+- 君子兰: Help translated EasyEDA editor from English to Vietnamese language.
+- Zdenek Hubner: Help translated EasyEDA from English to Czech language.
+- William Kazan: Help translated EasyEDA from English to Portuguese language.
+- Vantu Frifor: Pripomogao u prijevodu EasyEDA s Engleskog u Hrvatski
